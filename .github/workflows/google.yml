@@ -26,7 +26,7 @@ jobs:
     # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@1bee7de035d65ec5da40a31f8589e240eba8fde5
       with:
-        service_account_key: ${{ secrets.GKE_SA_KEY }}
+        credentials_json: ${{ secrets.GKE_SA }}
         project_id: focal-appliance-411112
 
     # Configure Docker to use the gcloud command-line tool as a credential
