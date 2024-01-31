@@ -23,12 +23,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: install the gcloud cli
-      uses: google-github-actions/setup-gcloud@v2
+   
+    - name: Authenticate to Google Cloud
+      uses: google-github-actions/auth@v1
       with:
-        project_id: focal-appliance-411112
-        credentials_json: '${{ secrets.GKE_SA_KEY }}'
-        export_default_credentials: true
+        credentials_json: ${{ secrets.GKE_SA }}
 
     # Configure Docker to use the gcloud command-line tool as a credential
     # helper for authentication
