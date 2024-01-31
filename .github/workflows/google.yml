@@ -36,7 +36,7 @@ jobs:
       with:
         token_format: 'access_token'
         workload_identity_provider: 'projects/964783857306/locations/global/workloadIdentityPools/github-actions-pool/providers/github'
-        service_account: 'without-cred-service-account@focal-appliance-411112.iam.gserviceaccount.com'
+        service_account: 'without-cred-service-account-f@focal-appliance-411112.iam.gserviceaccount.com'
 
     - name: Docker configuration
       run: |-
