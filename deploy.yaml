@@ -1,0 +1,37 @@
+# wiscow-deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wiscow-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: wiscow
+  template:
+    metadata:
+      labels:
+        app: wiscow
+    spec:
+      containers:
+      - name: wiscow-container
+        image: $GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA
+        ports:
+        - containerPort: 4499
+
+---
+# wiscow-service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: wiscow-service
+spec:
+  selector:
+    app: wiscow
+  ports:
+    - protocol: TCP
+      port: 4499
+      targetPort: 4499
+  type: NodePort
