@@ -27,7 +27,7 @@ jobs:
       uses: google-github-actions/setup-gcloud@v2
       with:
         project_id: focal-appliance-411112
-        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+        credentials_json: '${{ secrets.GKE_SA_KEY }}'
         export_default_credentials: true
 
     # Configure Docker to use the gcloud command-line tool as a credential
