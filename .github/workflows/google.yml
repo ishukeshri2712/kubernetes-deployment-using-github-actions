@@ -34,8 +34,8 @@ jobs:
       uses: 'google-github-actions/auth@v2'
       with:
         token_format: 'access_token'
-        workload_identity_provider: 'principal://iam.googleapis.com/projects/964783857306/locations/global/workloadIdentityPools/github-actions/subject/SUBJECT_ATTRIBUTE_VALUE'
-        service_account: 'gke-service-accout@focal-appliance-411112.iam.gserviceaccount.com'
+        workload_identity_provider: 'principalSet://iam.googleapis.com/projects/964783857306/locations/global/workloadIdentityPools/github-actions-pool/attribute.repository/ishukeshri2712/kubernetes-deployment-using-github-actions'
+        service_account: 'without-cred-service-account@focal-appliance-411112.iam.gserviceaccount.com'
 
     - name: Docker configuration
       run: |-
@@ -75,4 +75,3 @@ jobs:
         ./kustomize build . | kubectl apply -f -
         kubectl rollout status deployment/$DEPLOYMENT_NAME
         kubectl get services -o wide
-
