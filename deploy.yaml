@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: wiscow-container
-        image: us-central1-docker.pkg.dev/focal-appliance-411112/ishu/static-site:sha256:b7741dc58e0a4c52920a54169870cfe010d1a8212f0a7c9216eb357136ec37a8
+        image: us-central1-docker.pkg.dev/focal-appliance-411112/ishu/$GITHUB_SHA
         ports:
         - containerPort: 4499
 
