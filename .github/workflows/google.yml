@@ -46,7 +46,7 @@ jobs:
       uses: 'google-github-actions/auth@v2'
       with:
         token_format: 'access_token'
-        workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+        workload_identity_provider: 'projects/focal-appliance-411112/locations/Regional/workloadIdentityPools/my-pool/providers/my-provider'
         service_account: 'gke-service-accout@focal-appliance-411112.iam.gserviceaccount.com'
 
     # Alternative option - authentication via credentials json
