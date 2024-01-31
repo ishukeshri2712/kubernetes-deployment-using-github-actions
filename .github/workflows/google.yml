@@ -64,5 +64,10 @@ jobs:
         
     - name: Deploy
       run: |-
+        sed -i 's/$GAR_LOCATION/'"$GAR_LOCATION"'/g' deploy.
+        sed -i 's/$PROJECT_ID/'"$PROJECT_ID"'/g' deploy.yaml
+        sed -i 's/$REPOSITORY/'"$REPOSITORY"'/g' deploy.yaml
+        sed -i 's/$IMAGE/'"$IMAGE"'/g' deploy.yaml
+        sed -i 's/$GITHUB_SHA/'"$GITHUB_SHA"'/g' deploy.yaml
         kubectl apply -f deploy.yaml
         kubectl get pods
